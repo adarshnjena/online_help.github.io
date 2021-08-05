@@ -1,0 +1,10 @@
+.search_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35vw;
+    border: solid var(--hover-color) 2px;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 30px;
+}

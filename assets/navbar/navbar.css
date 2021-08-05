@@ -1,0 +1,146 @@
+:root{
+    --primary: #003366;
+    --hover-color: #fff;
+    --dark: #0073e6;
+    --light: #fff;
+}
+
+body{
+    font-family: 'Josefin Sans', sans-serif;
+}
+header{
+    background-color: var(--primary);
+    padding-left: 1.5rem;
+    font-weight: 700;
+}
+
+.branding-logo{
+    color: var(--light);
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.menu{
+    display: flex;
+    position: relative;
+}
+
+.menu li{
+    list-style-type: none;
+    position: relative;
+}
+
+.menu li a {
+    display: block;
+    text-decoration: none;
+    color: var(--light);
+    padding: 1em 1.5em;
+    font-size: 1.2rem;
+    font-weight: 400;
+    position: relative;
+}
+
+.menu-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background-color:#ffffff;
+    z-index: 1;
+    width: 100%;
+    transform: scaleX(0);
+}
+
+
+.menu-link:hover::before{
+    transform: scaleX(1);
+    transition: 200ms ease-out;
+}
+/*Dropdown
+------------------------------------------------------------*/
+.has-dropdown{
+    position: relative;
+}
+
+.submenu{
+    position: absolute;
+    color: var(--light);
+    left:0;
+    background-color: var(--dark);
+    white-space: nowrap;
+    padding: 1.5 0;
+    min-width: 10rem;
+/*hidden*/
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top center;
+}
+
+.submenu>li>a{
+    padding:0.8em 1.5em;
+}
+
+.submenu .submenu{
+   left:-100%;
+   top:0
+}
+
+.submenu .submenu .submenu{
+    left:-100%;
+     top:0
+ }
+ 
+ .menu>li:hover>a, .submenu>li:hover>a{
+     background-color: hsla(0 ,0% ,100% ,0.3);
+     color: var(--hover-color);
+     transition: 150ms ;
+ }
+
+ .menu > li:hover >a{
+     background-color: hsl(210, 100%, 45%);
+ }
+
+
+
+ .arrow{
+     width: 0.5em;
+     height: 0.5em;
+     display: inline-block;
+     vertical-align: middle;
+     border-left: 0.15em solid currentColor;
+     border-bottom: 0.15em solid currentColor;
+     transform: rotate(-45deg);
+     margin-top: -0.5em;
+     transition: all 300ms ease-in-out;
+ }
+
+ /*revel
+ ------------------------------------------------------------------*/
+
+ .menu > li:hover>a + .submenu,
+ .submenu>li:hover >a+ .submenu{
+    opacity: 1;
+    transform: scale(1);
+    transition: 100ms ease-in-out;
+ }
+
+ /* ANIMATE ARROWS */
+ .menu > li:hover > a > .arrow,
+ .submenu > li:hover > a > .arrow{
+      transform: rotate(225deg);
+ }
+
+
+ @media (max-width:65em){
+     .submenu .submenu .submenu{
+        left:100% ;
+     }
+ }
